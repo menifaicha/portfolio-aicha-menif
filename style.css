@@ -1,0 +1,42 @@
+:root{--p:#c084fc;--s:#f472b6;--g:linear-gradient(135deg,#c084fc,#f472b6);--bg:#030308;--card:rgba(255,255,255,.06);--bd:rgba(192,132,252,.28);--tx:#ecebf2;--mu:#a7a3b8;--sh:0 10px 40px rgba(192,132,252,.15)}
+[data-theme=light]{--bg:#f8fafc;--card:rgba(255,255,255,.85);--bd:rgba(192,132,252,.4);--tx:#1f2330;--mu:#5b6071;--sh:0 10px 30px rgba(120,80,180,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Segoe UI',Tahoma,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;transition:background .5s,color .5s;overflow-x:hidden}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+header,main,footer{position:relative;z-index:1}
+header{position:fixed;top:0;inset-inline:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 5%;background:var(--card);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd)}
+.logo{font-weight:800;font-size:1.25rem;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{color:var(--mu);text-decoration:none;font-size:.88rem;font-weight:500;transition:.3s}
+nav a:hover{color:var(--p)}
+.ctrl{display:flex;gap:8px}
+.ctrl button,select{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:20px;padding:7px 12px;font:inherit;font-size:.85rem;cursor:pointer;transition:.3s}
+.ctrl button:hover,select:hover{border-color:var(--s);box-shadow:var(--sh)}
+section{padding:90px 5% 30px;max-width:1150px;margin:auto}
+h2{font-size:2rem;font-weight:800;margin-bottom:28px;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;gap:50px;flex-wrap:wrap;text-align:center;padding-top:110px}
+.photo{width:240px;height:240px;border-radius:30px;padding:4px;background:var(--g);box-shadow:0 0 50px rgba(244,114,182,.35);animation:fl 5s ease-in-out infinite}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:27px;display:block}
+@keyframes fl{50%{transform:translateY(-12px)}}
+.ht{max-width:540px;text-align:start}
+.ht h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;line-height:1.1;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ht p{color:var(--mu);margin:12px 0}.ht .role{color:var(--tx);font-weight:700}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;color:#fff;background:var(--g);padding:13px 28px;border-radius:30px;text-decoration:none;box-shadow:var(--sh);transition:.3s}
+.btn.ghost{background:transparent;color:var(--tx);border:1px solid var(--p)}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 36px rgba(244,114,182,.4)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:24px;padding:26px;backdrop-filter:blur(14px);box-shadow:var(--sh);transition:.35s}
+.card:hover{transform:translateY(-6px);border-color:var(--s)}
+.card h3{margin-bottom:10px;font-size:1.1rem}
+.card p,.card li{color:var(--mu);font-size:.93rem}
+.card ul{padding-inline-start:18px}.ico{font-size:1.8rem;margin-bottom:8px}
+form{display:grid;gap:14px;max-width:600px}
+input,textarea{width:100%;background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:20px;padding:14px 18px;font:inherit;outline:0;transition:.3s}
+input:focus,textarea:focus{border-color:var(--s);box-shadow:0 0 0 3px rgba(244,114,182,.2)}
+.info{color:var(--mu);margin-bottom:18px;font-style:normal}.info a{color:var(--p)}
+footer{text-align:center;padding:40px 5%;color:var(--mu);font-size:.9rem;border-top:1px solid var(--bd);margin-top:60px}
+.rv{opacity:0;transform:translateY(30px);transition:1s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){nav{display:none}.ht{text-align:center}.btns{justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
